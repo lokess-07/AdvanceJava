@@ -3,21 +3,29 @@ import java.text.SimpleDateFormat;
 
 public class UserTest {
 	public static void main(String[] args) throws Exception {
-		add();
+		//add();
 		//delete();
-		//update();
+		update();
+		//testForget();
+	}
+	private static void testForget() throws Exception {
+		UserBean bean = new UserBean();
+		UserModel model = new UserModel();
+		bean=model.forgetPassword("123", "100289");
+		System.out.println("data updated");
+		
 	}
 	private static void update() throws Exception {
 		UserModel model =new  UserModel();
 		UserBean bean = new UserBean();
-		bean.setFirstName("ravi");
-		bean.setPassword("1133");
+		bean.setFirstName("Lokesh");
+		bean.setLoginId("lokeshsolanki@.com");
 		model.update(bean); 
 		
 	}
 	private static void delete() throws Exception {
 		UserModel model =new  UserModel();
-		model.delete(11);
+		model.delete(15);
 		
 		
 	}
@@ -33,7 +41,5 @@ public class UserTest {
 		ub.setAddress("indore");
 		UserModel um = new UserModel();
 		um.add(ub);
-		
-		
 	}
 }

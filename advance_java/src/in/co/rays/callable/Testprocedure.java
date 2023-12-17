@@ -40,7 +40,7 @@ public class Testprocedure {
 				//callStmt.execute();
 				ResultSet rs = callStmt.executeQuery();
 				while(rs.next()) {
-					System.out.println();
+					System.out.println(rs.getInt(1));
 				}
 				
 				
